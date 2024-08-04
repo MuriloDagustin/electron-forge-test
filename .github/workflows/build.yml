@@ -32,9 +32,9 @@ jobs:
       - name: Build Electron App
         run: npm run make
 
-      # - name: Upload Artifacts
-      #   if: success()
-      #   uses: actions/upload-artifact@v2
-      #   with:
-      #     name: build-artifacts-${{ matrix.os }}
-      #     path: out/make # Ajuste o caminho de acordo com o diretório de saída da build
+      - name: Upload Artifacts
+        if: success()
+        uses: actions/upload-artifact@v2
+        with:
+          name: build-artifacts-${{ matrix.os }}
+          path: out/make

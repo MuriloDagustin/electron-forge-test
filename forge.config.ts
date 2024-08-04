@@ -25,6 +25,18 @@ const config: ForgeConfig = {
         new MakerRpm({}),
         new MakerDeb({})
     ],
+    publishers: [
+        {
+            name: '@electron-forge/publisher-github',
+            config: {
+                repository: {
+                    owner: 'me',
+                    name: 'electron-forge-test'
+                },
+                prerelease: true
+            }
+        }
+    ],
     plugins: [
         new AutoUnpackNativesPlugin({}),
         new WebpackPlugin({
